@@ -1,0 +1,16 @@
+INFO: Starting application at 2025-05-19 08:00:00
+INFO: Loading configuration from /etc/app/config.yml
+WARNING: Configuration key 'timeout' is missing, using default
+ERROR: Failed to connect to database at 2025-05-19 08:00:03
+INFO: Retrying database connection...
+ERROR: Database connection timed out
+INFO: Successfully connected to fallback database
+WARNING: Using fallback mode may reduce performance
+ERROR: Failed to load user preferences from /home/user/.app_prefs
+ERROR: Null pointer exception in module 'authenticator'
+INFO: User login attempt detected
+ERROR: Invalid credentials provided for user 'admin'
+ERROR: Authentication module crashed unexpectedly
+INFO: Restarting authentication service
+ERROR: Maximum retry attempts reached for service 'auth'
+INFO: Shutting down application
