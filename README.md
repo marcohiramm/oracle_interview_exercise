@@ -6,3 +6,10 @@ It reads a log file, counts the occurrences of the word "ERROR", and prints the 
 
 
 Error log created using chat GPT using the next command: "Can you create a log that includes 7 "ERROR:" lines so I can use it for testing"
+
+
+In order to run the script, you need to have Python installed on your machine.
+You can run the script from the command line by providing the path to the log file as an argument.
+# Usage
+Example of how to run the script:
+python3 .\log_error_finder.py log.txt

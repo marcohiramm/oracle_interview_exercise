@@ -1,4 +1,3 @@
-import os 
 import re
 import argparse
 
@@ -7,12 +6,27 @@ import argparse
 def count_errors(file):
     try:
         log_file =  open(file.filename, "r")
+        content = log_file.read()
 
     except FileNotFoundError as e:
         print(f"Error: The file 'log.txt' was not found.")
 
     
-    content = log_file.read()
+    
+    error_line_counter = 0 
+
+    error_lines = re.findall(r'^.*ERROR:.*$', content, re.MULTILINE)
+
+
+
+    for line in error_lines:
+        error_line_counter += 1
+        print(line)
+
+    return error_line_counter
+
+
+
 
     
 
@@ -29,7 +43,8 @@ def main():
     # Parse arguments
     args = parser.parse_args()
 
-    count_errors(args)
+    errors_in_line = count_errors(args)
+    print("Amount of errors in Log: ", errors_in_line)
 
 
 
