@@ -4,6 +4,9 @@ import argparse
 
 
 def count_errors(file):
+
+
+    ##Open the file and read it
     try:
         log_file =  open(file.filename, "r")
         content = log_file.read()
@@ -11,25 +14,20 @@ def count_errors(file):
     except FileNotFoundError as e:
         print(f"Error: The file 'log.txt' was not found.")
 
-    
-    
+
     error_line_counter = 0 
 
+    ## Error lines containt all values tht start with ERROR using regular expresions
     error_lines = re.findall(r'^.*ERROR:.*$', content, re.MULTILINE)
 
 
+    ## Error printing and error counter 
 
     for line in error_lines:
         error_line_counter += 1
         print(line)
 
     return error_line_counter
-
-
-
-
-    
-
 
 
 def main():
